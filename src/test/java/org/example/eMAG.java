@@ -73,7 +73,7 @@ public class eMAG {
 
         if (paginadeLogare.isDisplayed()) {
             System.out.println("Pagina de logare este deschisa !");
-        }
+        } 
 
 
 // 2. Log in.
