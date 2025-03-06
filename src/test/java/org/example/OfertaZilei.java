@@ -54,9 +54,23 @@ public class OfertaZilei {
         assertTrue("Butonul 'OfertaZilei' nu este activ!", ofertaZilei.isEnabled());
         ofertaZilei.click();
 
-        WebDriverWait waitpopup2 = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement InchidePopup2 = waitpopup2.until(ExpectedConditions.visibilityOfElementLocated (By.cssSelector("body > div.gdpr-cookie-banner.js-gdpr-cookie-banner.py-2.px-0.login-view.login-view-ro.show > div > button > i")));
+        try{
+            WebDriverWait waitpopup2 = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement InchidePopup2 = waitpopup2.until(ExpectedConditions.visibilityOfElementLocated (By.cssSelector("body > div.gdpr-cookie-banner.js-gdpr-cookie-banner.py-2.px-0.login-view.login-view-ro.show > div > button > i")));
         InchidePopup2.click();
+        }
+        catch(Exception e){ System.out.println("Pop-up-ul nu a aparut!");
+        }
+        
+
+        try {
+            WebElement cookiepaginaOferta = driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/button[1]"));
+            cookiepaginaOferta.click();
+        }
+        catch(Exception e){
+            System.out.println("Al doilea cookie de pe pagina OfertaZilei nu apare");
+        }
+
 
         WebElement paginaDeschisa = driver.findElement(By.cssSelector("body > div.main-container-outer > div.main-container-inner"));
         assertTrue("Pagina nu se deschide", paginaDeschisa.isDisplayed());
