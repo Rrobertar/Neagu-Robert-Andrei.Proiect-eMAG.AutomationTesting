@@ -96,12 +96,19 @@ public class ContulmeuLogin {
 
         asteapta(10);
 
-//        WebElement confirma = driver.findElement(By.cssSelector("body > div.auth-box.text-center"));
-//        assertTrue("pagina de confirmare nu apare", confirma.isDisplayed());
-//        asteapta(20);
+         try {
+            WebElement confirma = driver.findElement(By.cssSelector("body > div.auth-box.text-center"));
+            assertTrue("pagina de confirmare nu apare", confirma.isDisplayed());
+            asteapta(20);
 
-//        WebElement ContinuaConfirma = driver.findElement(By.cssSelector("#validate_mfa_continue"));
-//        ContinuaConfirma.click();
+            WebElement ContinuaConfirma = driver.findElement(By.cssSelector("#validate_mfa_continue"));
+            ContinuaConfirma.click();
+        }
+        catch(Exception e){
+            System.out.println("Pagina de confirmare cod nu a aparut !");
+        }
+
+
 
         WebElement LogInRealizat = driver.findElement(By.cssSelector("#main-container > section"));  // Folosește ID-ul elementului care apare pe pagina după login
 
