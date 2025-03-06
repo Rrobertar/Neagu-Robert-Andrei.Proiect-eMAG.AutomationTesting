@@ -13,6 +13,7 @@ public void setup () throws Exception{
 ContulmeuLogin test1= new ContulmeuLogin();
          test1.setup();
          test1.souldbeanswerWithTrue();
+         test.1.teardown();
 
 Baradecautare test2= new Baradecautare();
          test2.setup();
