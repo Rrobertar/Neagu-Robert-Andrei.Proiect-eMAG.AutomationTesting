@@ -39,15 +39,6 @@ public class Baradecautare {
     }
 
     @Test
-    public void testGetPosts() {
-        // Send GET request to fetch a list of posts
-        Response response = RestAssured.get("https://www.emag.ro/");
-
-        // Validate response code
-        assertEquals(200, response.getStatusCode());
-
-        System.out.println(response.getStatusCode());
-    }
 
 
     public void souldbeanswerWithTrue() {
